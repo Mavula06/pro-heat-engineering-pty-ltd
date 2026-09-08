@@ -1,0 +1,1 @@
+Keep your existing logo.png from the repository in the project root. The website references logo.png.
