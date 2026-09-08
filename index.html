@@ -1,244 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-ZA">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pro Heat Engineering & Consulting (Pty) Ltd</title>
-  <meta name="description" content="Pro Heat Engineering & Consulting provides boiler repairs, electrical maintenance, mechanical repairs, and mining and quarrying consulting services in South Africa.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pro Heat Engineering & Consulting (Pty) Ltd | Engineering, Maintenance & Mining Support</title>
+  <meta name="description" content="Pro Heat Engineering & Consulting (Pty) Ltd provides engineering, boiler, electrical, mechanical, mining and quarrying support services in South Africa.">
+  <meta name="theme-color" content="#101820">
   <link rel="icon" href="logo.png">
-  <style>
-    :root {
-      --dark: #111827;
-      --dark2: #1f2937;
-      --orange: #f4511e;
-      --gold: #ffb300;
-      --light: #f7f8fa;
-      --text: #263238;
-      --muted: #64748b;
-      --white: #fff;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      line-height: 1.6;
-      background: var(--light);
-    }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(1120px, 92%); margin: auto; }
-    header {
-      background: rgba(17,24,39,.97);
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      border-bottom: 1px solid rgba(255,255,255,.1);
-    }
-    .nav {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
-    .brand img { width: 220px; max-width: 55vw; display: block; }
-    nav { display: flex; gap: 24px; align-items: center; }
-    nav a { font-size: 14px; font-weight: bold; color: #e5e7eb; }
-    nav a:hover { color: var(--gold); }
-    .menu { display: none; background: none; border: 1px solid #64748b; color: white; padding: 8px 10px; border-radius: 6px; }
-    .hero {
-      background:
-        linear-gradient(110deg, rgba(10,15,25,.96), rgba(17,24,39,.78)),
-        radial-gradient(circle at 80% 20%, rgba(244,81,30,.35), transparent 35%);
-      color: white;
-      padding: 105px 0 95px;
-      overflow: hidden;
-    }
-    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 50px; align-items: center; }
-    .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-weight: bold; font-size: 13px; margin-bottom: 15px; }
-    h1 { font-size: clamp(38px, 6vw, 68px); line-height: 1.04; margin-bottom: 22px; }
-    h1 span { color: var(--orange); }
-    .hero p { font-size: 19px; max-width: 650px; color: #d1d5db; margin-bottom: 30px; }
-    .buttons { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn { display: inline-block; padding: 13px 21px; border-radius: 6px; font-weight: bold; transition: .2s; }
-    .btn-primary { background: var(--orange); color: white; }
-    .btn-primary:hover { background: #d84315; transform: translateY(-2px); }
-    .btn-outline { border: 1px solid #9ca3af; color: white; }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-    .hero-card {
-      background: linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.04));
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.2);
-    }
-    .hero-card h3 { color: var(--gold); margin-bottom: 15px; font-size: 23px; }
-    .hero-card li { list-style: none; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.12); }
-    .hero-card li:last-child { border: 0; }
-    section { padding: 80px 0; }
-    .section-title { text-align: center; max-width: 700px; margin: 0 auto 45px; }
-    .section-title .eyebrow { color: var(--orange); }
-    h2 { font-size: clamp(29px, 4vw, 43px); line-height: 1.15; color: var(--dark); margin-bottom: 12px; }
-    .section-title p { color: var(--muted); }
-    .services { background: white; }
-    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-    .service {
-      padding: 28px;
-      border-radius: 10px;
-      background: var(--light);
-      border: 1px solid #e5e7eb;
-      border-top: 4px solid var(--orange);
-      transition: .2s;
-    }
-    .service:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(15,23,42,.08); }
-    .icon { font-size: 32px; margin-bottom: 15px; }
-    .service h3 { color: var(--dark); margin-bottom: 9px; font-size: 20px; }
-    .service p { color: var(--muted); font-size: 15px; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-    .about-box { background: var(--dark); color: white; padding: 38px; border-radius: 12px; }
-    .about-box h3 { color: var(--gold); font-size: 26px; margin-bottom: 15px; }
-    .about p { color: var(--muted); margin-bottom: 18px; }
-    .check { margin: 14px 0; font-weight: bold; }
-    .check::before { content: "✓"; color: var(--orange); margin-right: 10px; }
-    .contact { background: #eef1f5; }
-    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 30px; }
-    .contact-card, form { background: white; padding: 30px; border-radius: 12px; border: 1px solid #e5e7eb; }
-    .contact-item { margin: 20px 0; }
-    .contact-item strong { display: block; color: var(--dark); margin-bottom: 4px; }
-    .contact-item a { color: var(--orange); font-weight: bold; }
-    label { display: block; font-size: 14px; font-weight: bold; margin: 14px 0 6px; }
-    input, textarea {
-      width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px;
-      font: inherit;
-    }
-    textarea { min-height: 130px; resize: vertical; }
-    footer { background: var(--dark); color: #cbd5e1; padding: 28px 0; text-align: center; font-size: 14px; }
-    footer strong { color: white; }
-    @media (max-width: 800px) {
-      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      .service-grid { grid-template-columns: 1fr 1fr; }
-      nav { display: none; }
-      .menu { display: block; }
-      nav.open { display: flex; position: absolute; top: 78px; left: 0; right: 0; background: var(--dark); padding: 20px 4%; flex-direction: column; align-items: flex-start; }
-    }
-    @media (max-width: 520px) {
-      .service-grid { grid-template-columns: 1fr; }
-      .hero { padding: 70px 0; }
-      section { padding: 60px 0; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#home"><img src="logo.png" alt="Pro Heat Engineering and Consulting logo"></a>
-      <button class="menu" onclick="document.querySelector('nav').classList.toggle('open')">Menu</button>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#home" aria-label="Pro Heat home">
+      <img src="logo.png" alt="Pro Heat Engineering & Consulting (Pty) Ltd">
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
+      <a href="#process">How We Work</a><a href="#contact">Contact</a>
+      <a class="nav-pay" href="pay.html">Pay Online</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="kicker">ENGINEERING • MAINTENANCE • CONSULTING</p>
+      <h1>Practical engineering solutions for <span>industrial performance.</span></h1>
+      <p class="lead">Pro Heat Engineering & Consulting (Pty) Ltd provides dependable technical, maintenance, repair and mining-related support tailored to client requirements.</p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Request a Quote</a>
+        <a class="btn ghost" href="pay.html">Make a Payment</a>
+      </div>
+      <div class="trust-row">
+        <span>✓ South African business</span>
+        <span>✓ Professional service</span>
+        <span>✓ Clear customer communication</span>
+      </div>
     </div>
-  </header>
+    <aside class="hero-panel">
+      <p class="panel-label">CORE CAPABILITIES</p>
+      <div class="capability"><b>01</b><span>Boiler repairs & support</span></div>
+      <div class="capability"><b>02</b><span>Electrical maintenance</span></div>
+      <div class="capability"><b>03</b><span>Mechanical repairs</span></div>
+      <div class="capability"><b>04</b><span>Mining & quarrying consulting</span></div>
+      <div class="capability"><b>05</b><span>Mining permit assistance</span></div>
+    </aside>
+  </div>
+</section>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Industrial Engineering & Consulting</div>
-          <h1>Reliable solutions for <span>industrial performance.</span></h1>
-          <p>Pro Heat Engineering & Consulting (Pty) Ltd provides practical engineering, maintenance, repair, and mining consultancy services tailored to industrial and operational needs.</p>
-          <div class="buttons">
-            <a class="btn btn-primary" href="#contact">Request a Consultation</a>
-            <a class="btn btn-outline" href="tel:0799473357">Call 079 947 3357</a>
-          </div>
-        </div>
-        <div class="hero-card">
-          <h3>Our core capabilities</h3>
-          <ul>
-            <li>Boiler repairs and support</li>
-            <li>Electrical maintenance</li>
-            <li>Mechanical repairs</li>
-            <li>Mining and quarrying consultation</li>
-            <li>Mining permits acquisition assistance</li>
-          </ul>
-        </div>
+<section class="stats">
+  <div class="container stat-grid">
+    <div><strong>01</strong><span>Client-focused service</span></div>
+    <div><strong>02</strong><span>Technical problem solving</span></div>
+    <div><strong>03</strong><span>Maintenance & repair support</span></div>
+    <div><strong>04</strong><span>Online payment ready</span></div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container two-col">
+    <div>
+      <p class="kicker dark">ABOUT PRO HEAT</p>
+      <h2>Engineering knowledge. Practical support.</h2>
+      <p>Pro Heat Engineering & Consulting (Pty) Ltd is an engineering and consulting business focused on practical support for industrial, mechanical, electrical, heating, mining and quarrying requirements.</p>
+      <p>We aim to understand the client's requirement, communicate the scope clearly and deliver a professional service appropriate to the project.</p>
+      <div class="check-list">
+        <div>Professional and dependable service</div>
+        <div>Clear quotations and scope communication</div>
+        <div>Maintenance, repair and consulting support</div>
+        <div>Customer-focused after-service communication</div>
       </div>
-    </section>
-
-    <section class="services" id="services">
-      <div class="container">
-        <div class="section-title">
-          <div class="eyebrow">What we do</div>
-          <h2>Professional services built around your operation</h2>
-          <p>We help clients maintain equipment, solve technical problems, and navigate industrial and mining-related requirements.</p>
-        </div>
-        <div class="service-grid">
-          <article class="service"><div class="icon">♨</div><h3>Boiler Repairs</h3><p>Repair and maintenance support for boiler systems and related industrial heating equipment.</p></article>
-          <article class="service"><div class="icon">⚡</div><h3>Electrical Maintenance</h3><p>Electrical maintenance services focused on safe, dependable, and efficient operations.</p></article>
-          <article class="service"><div class="icon">⚙</div><h3>Mechanical Repairs</h3><p>Mechanical repair and troubleshooting support for industrial machinery and equipment.</p></article>
-          <article class="service"><div class="icon">⛏</div><h3>Mining Consultation</h3><p>Consulting support for mining and quarrying operations, planning, and technical requirements.</p></article>
-          <article class="service"><div class="icon">🏗</div><h3>Quarrying Consultation</h3><p>Practical guidance for quarrying activities and operational engineering needs.</p></article>
-          <article class="service"><div class="icon">📋</div><h3>Mining Permits</h3><p>Assistance with the mining permit acquisition process and related administrative requirements.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="container about-grid">
-        <div>
-          <div class="eyebrow">About Pro Heat</div>
-          <h2>Engineering knowledge. Practical support.</h2>
-          <p>Pro Heat Engineering & Consulting (Pty) Ltd is committed to helping industrial clients keep their operations reliable, productive, and compliant with applicable requirements.</p>
-          <p>Our approach is straightforward: understand the problem, provide a practical solution, and communicate clearly throughout the work.</p>
-          <div class="check">Professional and dependable service</div>
-          <div class="check">Industrial-focused technical support</div>
-          <div class="check">Consultation tailored to client needs</div>
-        </div>
-        <div class="about-box">
-          <h3>Let’s discuss your requirements</h3>
-          <p>Whether you need repair support, maintenance, technical consultation, or assistance with mining-related permits, contact our team to discuss your project.</p>
-          <a class="btn btn-primary" href="#contact">Contact Pro Heat</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container">
-        <div class="section-title">
-          <div class="eyebrow">Get in touch</div>
-          <h2>Request a consultation</h2>
-          <p>Tell us what you need and we will get back to you.</p>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Contact details</h3>
-            <div class="contact-item"><strong>Phone</strong><a href="tel:0799473357">079 947 3357</a></div>
-            <div class="contact-item"><strong>Email</strong><a href="mailto:sbmunlimitedgroup@outlook.com">proheatic@outlook.com</a></div>
-            <div class="contact-item"><strong>Address</strong>Stand No. 1133, Mangweni Village,<br>Kwalugedlane, 1341,<br>Mbombela, South Africa.</div>
-          </div>
-          <form action="mailto:proheatic@outlook.com" method="post" enctype="text/plain">
-            <label for="name">Your name</label>
-            <input id="name" name="Name" required>
-            <label for="email">Email address</label>
-            <input id="email" name="Email" type="email" required>
-            <label for="message">How can we help?</label>
-            <textarea id="message" name="Message" required></textarea>
-            <button class="btn btn-primary" type="submit" style="border:0;margin-top:18px;cursor:pointer;">Send enquiry</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <strong>Pro Heat Engineering & Consulting (Pty) Ltd</strong><br>
-      © <span id="year"></span> Pro Heat Engineering & Consulting. All rights reserved.
     </div>
-  </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <div class="dark-card">
+      <span class="card-tag">BUSINESS PROFILE</span>
+      <h3>Pro Heat Engineering & Consulting (Pty) Ltd</h3>
+      <p>Engineering, maintenance, repair and consulting support for clients requiring practical technical solutions.</p>
+      <a href="#contact" class="text-link">Speak to our team →</a>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker dark">OUR SERVICES</p>
+      <h2>Services designed around your operation</h2>
+      <p>Contact us for a site assessment, consultation or quotation based on your specific requirement.</p>
+    </div>
+    <div class="service-grid">
+      <article class="service"><div class="service-icon">♨</div><h3>Boiler Repairs</h3><p>Repair and maintenance support for boiler systems and associated industrial heating equipment.</p></article>
+      <article class="service"><div class="service-icon">⚡</div><h3>Electrical Maintenance</h3><p>Electrical maintenance support aimed at safe, reliable and efficient operations.</p></article>
+      <article class="service"><div class="service-icon">⚙</div><h3>Mechanical Repairs</h3><p>Mechanical troubleshooting, repairs and maintenance support for industrial equipment.</p></article>
+      <article class="service"><div class="service-icon">⛏</div><h3>Mining Consulting</h3><p>Consulting support for mining operations, planning and technical requirements.</p></article>
+      <article class="service"><div class="service-icon">▰</div><h3>Quarrying Consulting</h3><p>Practical guidance for quarrying activities and operational engineering requirements.</p></article>
+      <article class="service"><div class="service-icon">✓</div><h3>Mining Permit Assistance</h3><p>Administrative and consulting assistance relating to mining permit processes and requirements.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker dark">HOW WE WORK</p>
+      <h2>A straightforward professional process</h2>
+    </div>
+    <div class="process-grid">
+      <div><span>01</span><h3>Enquire</h3><p>Tell us about your project, equipment, maintenance requirement or consulting need.</p></div>
+      <div><span>02</span><h3>Assess</h3><p>We clarify the scope, requirements, timing and information needed to prepare the work.</p></div>
+      <div><span>03</span><h3>Quote</h3><p>Where applicable, a quotation or agreed scope is provided before work proceeds.</p></div>
+      <div><span>04</span><h3>Deliver</h3><p>We complete the agreed service and communicate with the client throughout the engagement.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="payment-strip">
+  <div class="container payment-grid">
+    <div><p class="kicker">SECURE ONLINE PAYMENTS</p><h2>Ready to pay for an approved service?</h2><p>Use our online payment page for invoices, deposits or approved service payments. Payment processing is handled by Payfast.</p></div>
+    <a class="btn primary" href="pay.html">Pay Online →</a>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="container contact-grid">
+    <div>
+      <p class="kicker dark">CONTACT</p>
+      <h2>Let's discuss your requirement.</h2>
+      <p>For quotations, technical enquiries, maintenance support or consulting requirements, contact Pro Heat Engineering & Consulting.</p>
+      <div class="contact-list"><div class="business-id"><strong>Company registration</strong><span>2026/258102/07</span></div>
+      <div class="business-id"><strong>Tax number</strong><span>9597376228</span></div>
+        <a href="tel:+27799473357"><strong>Phone</strong><span>079 947 3357</span></a>
+        <a href="mailto:proheatic@outlook.com"><strong>Email</strong><span>proheatic@outlook.com</span></a>
+        <div><strong>Business address</strong><span>Stand No. 1133, Mangweni Village, Kwalugedlane, 1341, Mbombela, South Africa.</span></div>
+      </div>
+    </div>
+    <form class="contact-form" action="mailto:proheatic@outlook.com" method="post" enctype="text/plain">
+      <h3>Request a quotation</h3>
+      <label>Name / Company<input name="Name or Company" required></label>
+      <label>Email<input type="email" name="Email" required></label>
+      <label>Phone<input name="Phone"></label>
+      <label>Service required<select name="Service"><option>General enquiry</option><option>Boiler repairs</option><option>Electrical maintenance</option><option>Mechanical repairs</option><option>Mining consulting</option><option>Quarrying consulting</option><option>Mining permit assistance</option></select></label>
+      <label>Message<textarea name="Message" required></textarea></label>
+      <button class="btn primary" type="submit">Send Enquiry</button>
+      <small>Submitting this form opens your email application. For a fully hosted enquiry form, connect Formspree, Netlify Forms or another form provider.</small>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><img src="logo.png" alt="Pro Heat" class="footer-logo"><p>Engineering & Consulting (Pty) Ltd</p></div>
+    <div><strong>Company</strong><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></div>
+    <div><strong>Customer information</strong><a href="terms.html">Terms & Conditions</a><a href="privacy.html">Privacy Policy</a><a href="refunds.html">Refund & Cancellation Policy</a><a href="pay.html">Payment Information</a></div>
+  </div>
+  <div class="copyright">© <span id="year"></span> Pro Heat Engineering & Consulting (Pty) Ltd. All rights reserved.</div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
